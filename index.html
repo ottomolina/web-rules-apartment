@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guía del Huésped</title>
+    <style>
+        :root {
+            --bg: #f8fafc;
+            --card: #ffffff;
+            --text: #0f172a;
+            --muted: #475569;
+            --border: #e2e8f0;
+            --accent: #0ea5e9;
+            --whatsapp: #16a34a;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0f172a;
+                --card: #1e293b;
+                --text: #f8fafc;
+                --muted: #94a3b8;
+                --border: #334155;
+                --whatsapp: #22c55e;
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 1rem;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 1.25rem;
+            margin: 0;
+        }
+
+        .lang-btn {
+            background: var(--card);
+            color: var(--text);
+            border: 1px solid var(--border);
+            padding: 0.4rem 0.75rem;
+            border-radius: 999px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .wifi-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .btn {
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            padding: 0.5rem 0.9rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+
+        .btn-whatsapp {
+            background: var(--whatsapp);
+            color: #ffffff;
+            width: 100%;
+            padding: 0.75rem 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .btn-whatsapp svg {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+            fill: currentColor;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+            margin: 0.5rem 0 0;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        details {
+            border-top: 1px solid var(--border);
+            padding: 0.75rem 0;
+        }
+
+        details:first-of-type {
+            border-top: none;
+            padding-top: 0;
+        }
+
+        summary {
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        details p {
+            margin: 0.5rem 0 0;
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+        <header>
+            <h1 data-i18n="title">Guía del Huésped</h1>
+            <button id="langToggle" class="lang-btn" type="button">EN</button>
+        </header>
+
+        <section class="card">
+            <div class="wifi-row">
+                <div>
+                    <strong data-i18n="wifiLabel">Wi-Fi Gratis</strong><br />
+                    <small data-i18n="wifiName"></small><small> <b>CLARO_5GHz_7EC9F3</b></small><br>
+                    <small data-i18n="wifiPass"></small><small> <b id="wifiPass">UCxD%N#zhGV9eqt</b></small>
+                </div>
+                <button id="copyBtn" class="btn" type="button" data-i18n="copyBtn">Copiar</button>
+            </div>
+        </section>
+
+        <section class="card">
+            <strong data-i18n="rulesTitleHome"></strong>
+            <p data-i18n="rulesDesc1" style="text-align: justify;"></p>
+        </section>
+
+        <section class="card">
+            <strong data-i18n="prohibitionsTitle"></strong>
+            <ul>
+                <li data-i18n="prohibitions1"></li>
+                <li data-i18n="prohibitions2"></li>
+                <li data-i18n="prohibitions3"></li>
+                <li data-i18n="prohibitions4"></li>
+                <li data-i18n="prohibitions5"></li>
+                <li data-i18n="prohibitions6"></li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <strong data-i18n="checkInOutTitle"></strong>
+            <ul>
+                <li data-i18n="checkInOut1"></li>
+                <li data-i18n="checkInOut2"></li>
+                <li data-i18n="checkInOut3"></li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <strong data-i18n="petsTitle"></strong>
+            <ul>
+                <li data-i18n="persRule1"></li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <strong data-i18n="parkingTitle"></strong>
+            <ul>
+                <li data-i18n="parkingRule1"></li>
+                <li data-i18n="parkingRule2"></li>
+                <li data-i18n="parkingRule3"></li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <strong data-i18n="trashTitle"></strong>
+            <ul>
+                <li data-i18n="trashRule1"></li>
+                <li data-i18n="trashRule2"></li>
+                <li data-i18n="trashRule3"></li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <strong data-i18n="balconyTitle"></strong>
+            <ul>
+                <li data-i18n="balconyRule1"></li>
+                <li data-i18n="balconyRule2"></li>
+                <li data-i18n="balconyRule3"></li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <strong data-i18n="amenitiesTitle"></strong>
+            <ul>
+                <li data-i18n="amenitiesRule1"></li>
+                <li data-i18n="amenitiesRule2"></li>
+                <li data-i18n="amenitiesRule3"></li>
+                <li data-i18n="amenitiesRule4"></li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <strong data-i18n="behaviorTitle"></strong>
+            <ul>
+                <li data-i18n="behaviorRule1"></li>
+                <li data-i18n="behaviorRule2"></li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <strong data-i18n="checkoutTitle"></strong>
+            <ul>
+                <li data-i18n="checkout1"></li>
+                <li data-i18n="checkout2"></li>
+                <li data-i18n="checkout3"></li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <a id="whatsappBtn" class="btn btn-whatsapp" href="#" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                        d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.32a8.188 8.188 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.13.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.16-.48-.29-.25-.12-1.46-.72-1.69-.8-.22-.08-.39-.12-.55.12-.17.25-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.55-1.33-.76-1.82-.2-.48-.4-.42-.55-.43h-.47Z" />
+                </svg>
+                <span data-i18n="whatsappBtn"></span>
+            </a>
+        </section>
+
+    </main>
+
+    <script>
+        const WHATSAPP_PHONE = "50200000000";
+        const translations = {
+            es: {
+                title: "Guía del Huésped",
+                wifiName: "Nombre:",
+                wifiPass: "Clave:",
+                wifiLabel: "Wi-Fi Gratis",
+                copyBtn: "Copiar",
+                copiedBtn: "¡Copiado!",
+
+                rulesTitleHome: "Reglas de la casa Edificio Vidalta - Obligatorias para todos los huéspedes",
+                rulesDesc1: "¡Bienvenido/a al Edificio VIDALTA! Para disfrutar de una estancia agradable y respetar el Reglamento de Copropiedad, <strong>lee y cumple estas normas</strong>. El incumplimiento genera multas y/o desalojo inmediato sin reembolso.",
+
+                checkInOutTitle: "CHECK-IN / CHECK-OUT",
+                checkInOut1: "Horarios serán enviados por mensaje.",
+                checkInOut2: "Cualquier cambio de fecha debe notificarse al anfitrión.",
+                checkInOut3: "Al salir, todos los huéspedes deben bajar del vehículo para verificación.",
+
+                prohibitionsTitle: "PROHIBICIONES ABSOLUTAS",
+                prohibitions1: "<strong>Fiestas, eventos o reuniones</strong> → prohibidos.",
+                prohibitions2: "<strong>Drogas</strong> → ingreso y consumo prohibido.",
+                prohibitions3: "<strong>Consumo de alcohol</strong> en áreas comunes → prohibido.",
+                prohibitions4: "<strong>Fumar</strong> en apartamento, balcones o áreas comunes → <strong>PROHIBIDO</strong> (Artículo 19 del Reglamento).",
+                prohibitions5: "<strong>Visitas adicionales</strong> a huéspedes de renta corta → prohibidas.",
+                prohibitions6: "<strong>Delivery, Uber, taxis o paneles</strong> → no pueden ingresar al edificio.",
+
+                petsTitle: "MASCOTAS",
+                persRule1: "Solo perros <strong>menores de 30 libras (13,6 kg)</strong> que cumplan el reglamento Pet Friendly. Avisar al anfitrión antes de reservar.",
+
+                noiseTitle: "RUIDO Y TRANQUILIDAD",
+                noiseRule1: "<strong>Silencio nocturno:</strong> 22:00 a 08:00.",
+                noiseRule2: "Respetar horarios de descanso de los vecinos.",
+                noiseRule3: "Prohibidos ruidos altos, música o sonidos que perturben la tranquilidad.",
+
+                parkingTitle: "ESTACIONAMIENTO",
+                parkingRule1: "Solo usar el parqueo asignado al apartamento.",
+                parkingRule2: "Vehículos adicionales <strong>deben dejarse fuera</strong> del edificio.",
+                parkingRule3: "Prohibido usar parqueos de visitas o de otros apartamentos.",
+
+                trashTitle: "BASURA Y LIMPIEZA",
+                trashRule1: "Dejar basura <strong>separada</strong> en los botes designados.",
+                trashRule2: "Basura grande llevarla al cuarto de basura del sótano 01.",
+                trashRule3: "<strong>No dejar basura en pasillos ni áreas comunes</strong>.",
+
+                balconyTitle: "BALCONES",
+                balconyRule1: "<strong>No tirar agua</strong> ni lavar con manguera.",
+                balconyRule2: "<strong>No colgar</strong> ropa, toallas, trapos ni tendederos.",
+                balconyRule3: "Limpieza solo con trapeador húmedo.",
+
+                amenitiesTitle: "ÁREAS COMUNES Y AMENIDADES",
+                amenitiesRule1: "Uso exclusivo para huéspedes registrados <strong>(no visitas)</strong>.",
+                amenitiesRule2: "No transitar en elevadores o áreas comunes con torso descubierto, descalzo o mojado.",
+                amenitiesRule3: "Respetar aforos y horarios de cada amenidad.",
+                amenitiesRule4: "Prohibido dejar motocicletas en áreas comunes.",
+
+                behaviorTitle: "COMPORTAMIENTO",
+                behaviorRule1: "Respetar al personal de seguridad, limpieza y administración.",
+                behaviorRule2: "Cualquier falta de respeto (verbal o física) es falta grave.",
+
+                checkoutTitle: "IMPORTANTE",
+                checkout1: "Todos los huéspedes están sujetos al <strong>Reglamento de Copropiedad y Administración del Edificio VIDALTA</strong> y al presente Reglamento de Rentas Cortas. La administración se reserva el derecho de admisión y puede desalojar sin previo aviso por incumplimiento. Multas desde <strong>Q500.00</strong> hasta <strong>Q2,500.00</strong> serán cargadas al huésped.",
+                checkout2: "<strong>Al reservar y entrar al apartamento, aceptas estas reglas.</strong>",
+                checkout3: "<strong>¡Gracias por tu comprensión y respeto!</strong> Cualquier duda contáctame directamente.",
+
+                whatsappBtn: "Contactar por WhatsApp",
+                whatsappMsg: "Hola, estoy hospedado en el apartamento y tengo una consulta."
+            },
+            en: {
+                title: "Guest Guide",
+                wifiName: "Name:",
+                wifiPass: "Password:",
+                wifiLabel: "Free Wi-Fi",
+                copyBtn: "Copy",
+                copiedBtn: "Copied!",
+
+                rulesTitleHome: "Vidalta Building House Rules - Mandatory for All Guests",
+                rulesDesc1: "Welcome to <strong>VIDALTA Building</strong>! To enjoy a pleasant stay and respect the Condominium Bylaws, <strong>please read and follow these rules</strong>. Non-compliance may result in fines and/or immediate eviction without refund.",
+
+                checkInOutTitle: "CHECK-IN / CHECK-OUT",
+                checkInOut1: "Exact times will be sent by message.",
+                checkInOut2: "Any date changes must be notified to the host.",
+                checkInOut3: "Upon departure, all guests must exit the vehicle for verification.",
+
+                prohibitionsTitle: "STRICT PROHIBITIONS",
+                prohibitions1: "<strong>Parties, events, or gatherings</strong> → prohibited.",
+                prohibitions2: "<strong>Drugs</strong> → entry and consumption prohibited.",
+                prohibitions3: "<strong>Alcohol consumption</strong> in common areas → prohibited.",
+                prohibitions4: "<strong>Smoking</strong> in the apartment, balconies, or common areas → <strong>PROHIBITED</strong> (Article 19 of the Bylaws).",
+                prohibitions5: "<strong>Additional visitors</strong> for short-term rental guests → prohibited.",
+                prohibitions6: "<strong>Delivery drivers, Uber, taxis, or vans</strong> → are not allowed inside the building.",
+
+                petsTitle: "PETS",
+                persRule1: "Only dogs <strong>under 30 lbs (13.6 kg)</strong> that comply with the Pet Friendly policy. Notify the host before booking.",
+
+                noiseTitle: "NOISE AND QUIET",
+                noiseRule1: "<strong>Quiet hours:</strong> 10:00 PM to 8:00 AM.",
+                noiseRule2: "Respect neighbors' resting hours.",
+                noiseRule3: "Loud noises, music, or sounds that disturb the peace are prohibited.",
+
+                parkingTitle: "PARKING",
+                parkingRule1: "Only use the parking space assigned to the apartment.",
+                parkingRule2: "Additional vehicles <strong>must be parked outside</strong> the building.",
+                parkingRule3: "Using visitor parking or spaces assigned to other apartments is prohibited.",
+
+                trashTitle: "TRASH AND CLEANING",
+                trashRule1: "Leave trash <strong>sorted</strong> in the designated bins.",
+                trashRule2: "Take large trash items to the trash room on Basement 01.",
+                trashRule3: "<strong>Do not leave trash in hallways or common areas</strong>.",
+
+                balconyTitle: "BALCONIES",
+                balconyRule1: "<strong>Do not pour water</strong> or wash with a hose.",
+                balconyRule2: "<strong>Do not hang</strong> clothes, towels, rags, or drying racks.",
+                balconyRule3: "Clean with a damp mop only.",
+
+                amenitiesTitle: "COMMON AREAS AND AMENITIES",
+                amenitiesRule1: "Exclusive use for registered guests <strong>(no visitors)</strong>.",
+                amenitiesRule2: "Do not walk through elevators or common areas shirtless, barefoot, or wet.",
+                amenitiesRule3: "Respect capacity limits and hours for each amenity.",
+                amenitiesRule4: "Leaving motorcycles in common areas is prohibited.",
+
+                behaviorTitle: "BEHAVIOR",
+                behaviorRule1: "Respect security, cleaning, and management staff.",
+                behaviorRule2: "Any disrespect (verbal or physical) is a serious offense.",
+
+                checkoutTitle: "IMPORTANT",
+                checkout1: "All guests are subject to the <strong>VIDALTA Building Condominium and Administration Bylaws</strong> and these Short-Term Rental Rules. Management reserves the right of admission and may evict without prior notice for non-compliance. Fines from <strong>Q500.00</strong> up to <strong>Q2,500.00</strong> will be charged to the guest.",
+                checkout2: "<strong>By booking and entering the apartment, you agree to these rules.</strong>",
+                checkout3: "<strong>Thank you for your understanding and respect!</strong> Please contact me directly with any questions.",
+
+                whatsappBtn: "Contact on WhatsApp",
+                whatsappMsg: "Hi, I'm staying at the apartment and have a question."
+            }
+        };
+
+        // 1. Detectar idioma guardado o del dispositivo
+        const savedLang = localStorage.getItem("lang");
+        const deviceLang = (navigator.language || "es").toLowerCase().startsWith("en") ? "en" : "es";
+        let currentLang = savedLang || deviceLang;
+
+        const langToggle = document.getElementById("langToggle");
+        const copyBtn = document.getElementById("copyBtn");
+        const whatsappBtn = document.getElementById("whatsappBtn");
+
+        function updateWhatsappLink(lang) {
+            const encodedText = encodeURIComponent(translations[lang].whatsappMsg);
+            whatsappBtn.href = `https://wa.me/${WHATSAPP_PHONE}?text=${encodedText}`;
+        }
+
+        function applyLanguage(lang) {
+            currentLang = lang;
+            document.documentElement.lang = lang;
+            langToggle.textContent = lang === "es" ? "EN" : "ES";
+
+            document.querySelectorAll("[data-i18n]").forEach((el) => {
+                const key = el.getAttribute("data-i18n");
+                if (translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+
+            updateWhatsappLink(lang);
+        }
+
+        langToggle.addEventListener("click", () => {
+            const nextLang = currentLang === "es" ? "en" : "es";
+            localStorage.setItem("lang", nextLang);
+            applyLanguage(nextLang);
+        });
+
+        copyBtn.addEventListener("click", async () => {
+            const pass = document.getElementById("wifiPass").textContent;
+            await navigator.clipboard.writeText(pass);
+            copyBtn.textContent = translations[currentLang].copiedBtn;
+            setTimeout(() => {
+                copyBtn.textContent = translations[currentLang].copyBtn;
+            }, 2000);
+        });
+
+        applyLanguage(currentLang);
+    </script>
+</body>
+
+</html>
